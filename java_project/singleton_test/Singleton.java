@@ -1,5 +1,17 @@
 package com.example.myapplication;
 
+/*
+
+注意： 在反序列化的情况下，下面的单例模式也会重新创建对象。
+我们需要在 反序列化方法 readResolve中 直接 return instance.
+
+private Object readResolve() throws ObjectStreamException {
+	return instance;
+}
+
+*/
+
+
 class Singleton_DLC {
 
     // dlc 双重检查 第一次加载时会比较慢， 在高并发环境下不合适
